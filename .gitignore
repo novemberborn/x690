@@ -1,0 +1,9 @@
+.nyc_output
+node_modules
+/coverage
+
+/constants.js
+/constants.js.map
+/index.js
+/index.js.map
+/lib

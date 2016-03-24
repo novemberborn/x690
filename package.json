@@ -1,0 +1,105 @@
+{
+  "name": "x690",
+  "version": "0.0.0",
+  "description": "Low-level decoder for X.690 Distinguished Encoding Rules (DER)",
+  "files": [
+    "constants.js",
+    "constants.js.map",
+    "index.js",
+    "index.js.map",
+    "lib"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf constants.js constants.js.map index.js index.js.map lib",
+    "prebuild": "npm run clean",
+    "build": "babel src --out-dir ./ --source-maps",
+    "build:watch": "npm run build -- --watch",
+    "prepublish": "npm run build",
+    "lint": "eslint --cache --cache-location=node_modules/.cache --ignore-path=.gitignore .",
+    "test": "ava",
+    "test:watch": "npm run test -- --watch",
+    "posttest": "npm run lint",
+    "coverage": "nyc --cache npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/novemberborn/x690.git"
+  },
+  "keywords": [
+    "asn.1",
+    "asn1",
+    "decode",
+    "der",
+    "parse",
+    "x.690",
+    "x690"
+  ],
+  "author": "Mark Wubben (https://novemberborn.net/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/novemberborn/x690/issues"
+  },
+  "homepage": "https://github.com/novemberborn/x690#readme",
+  "devDependencies": {
+    "ava": "github:sindresorhus/ava#0f0c07067cdd963321bf5b614d3887968f3cb656",
+    "babel-cli": "^6.6.5",
+    "babel-eslint": "^6.0.0-beta.6",
+    "babel-plugin-transform-es2015-destructuring": "^6.6.5",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.7.4",
+    "babel-plugin-transform-strict-mode": "^6.6.5",
+    "eslint": "^2.4.0",
+    "eslint-config-standard": "^5.1.0",
+    "eslint-plugin-ava": "^1.3.1",
+    "eslint-plugin-promise": "^1.1.0",
+    "eslint-plugin-standard": "^1.3.2",
+    "nyc": "^6.1.1",
+    "rimraf": "^2.5.2"
+  },
+  "ava": {
+    "source": [
+      "index.js",
+      "lib/**/*.js"
+    ]
+  },
+  "babel": {
+    "plugins": [
+      "transform-es2015-destructuring",
+      "transform-es2015-modules-commonjs",
+      "transform-strict-mode"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "standard",
+      "plugin:ava/recommended"
+    ],
+    "ignorePattern": [
+      "/lib"
+    ],
+    "parser": "babel-eslint",
+    "parserOptions": {
+      "ecmaVersion": 7,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "impliedStrict": true
+      }
+    },
+    "plugins": [
+      "ava"
+    ],
+    "rules": {
+      "arrow-parens": [
+        2,
+        "as-needed"
+      ]
+    },
+    "nyc": {
+      "reporter": [
+        "html",
+        "lcov",
+        "text"
+      ]
+    }
+  }
+}
