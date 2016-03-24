@@ -1,6 +1,6 @@
 {
   "name": "x690",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Low-level decoder for X.690 Distinguished Encoding Rules (DER)",
   "files": [
     "constants.js",
