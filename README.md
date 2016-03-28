@@ -135,9 +135,9 @@ Currently this module only decodes DER data. It does a reasonable job of
 validating primitive values but the validation does not fully confirm to the
 X.690 specification. Figuring out how to validate the values can be tricky.
 
-*Validation may be improved in the future, even in patch releases. You should not
-assume that if you can parse a DER structure without errors that it is strictly
-valid.*
+*Validation may be improved in the future, even in patch releases. You should
+not assume that if you can parse a DER structure without errors that it is
+strictly valid.*
 
 ### Known exceptions
 
@@ -152,7 +152,8 @@ Date-parsing logic in the JavaScript engine.
 * `GENERAL_STRING`, `GRAPHIC_STRING`, `T61_STRING`, `VIDEOTEX_STRING` and
 `VISIBLE_STRING` values are treated as ASCII.
 
-*Note that this is likely not an exhaustive list.* Please contribute any other exception you might come across.
+*Note that this is likely not an exhaustive list.* Please contribute any other
+exception you might come across.
 
 ### Constructed values
 
