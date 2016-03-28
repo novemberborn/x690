@@ -20,7 +20,7 @@
     "test": "ava",
     "test:watch": "npm run test -- --watch",
     "posttest": "npm run lint",
-    "coverage": "nyc --cache npm test"
+    "coverage": "nyc npm test"
   },
   "repository": {
     "type": "git",
@@ -93,13 +93,14 @@
         2,
         "as-needed"
       ]
-    },
-    "nyc": {
-      "reporter": [
-        "html",
-        "lcov",
-        "text"
-      ]
     }
+  },
+  "nyc": {
+    "cache": true,
+    "reporter": [
+      "html",
+      "lcov",
+      "text"
+    ]
   }
 }
