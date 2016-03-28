@@ -131,6 +131,8 @@ through `require('x690').constants` and `require('x690/constants')`.
 
 ## Caveats
 
+### Validation
+
 Currently this module only decodes DER data. It does a reasonable job of
 validating primitive values but the validation does not fully confirm to the
 X.690 specification. Figuring out how to validate the values can be tricky.
@@ -139,7 +141,7 @@ X.690 specification. Figuring out how to validate the values can be tricky.
 not assume that if you can parse a DER structure without errors that it is
 strictly valid.*
 
-### Known exceptions
+#### Known exceptions
 
 * Fractional-second elements in `GENERALIZED_TIME` values are not checked for
 trailing zeros.
@@ -164,3 +166,17 @@ with those rules.
 
 Note that if you encounter such a type you can `decodeStructure()` to
 recursively decode each value.
+
+### Number representation
+
+Node.js can only decode two's complement signed values up to 6 bytes in length.
+Any `ENUMERATED` or `INTEGER` value that is larger than 6 bytes will be decoded
+as a buffer. Your code should handle `decodePrimitive()` returning numbers and
+buffers.
+
+Currently `REAL` values are not decoded, a buffer is returned instead. If
+decoding support is added in the future this will be a breaking change.
+
+### Buffers
+
+Returned buffers are slices of the original input, not copies.
