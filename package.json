@@ -14,13 +14,13 @@
     "clean": "rimraf constants.js constants.js.map index.js index.js.map lib",
     "prebuild": "npm run clean",
     "build": "babel src --out-dir ./ --source-maps",
-    "build:watch": "npm run build -- --watch",
     "prepublish": "npm run build",
     "lint": "as-i-preach",
     "test": "ava",
-    "test:watch": "npm run test -- --watch",
     "posttest": "npm run lint",
-    "coverage": "nyc npm test"
+    "coverage": "nyc npm test",
+    "watch:build": "npm run build -- --watch",
+    "watch:test": "npm test -- --watch"
   },
   "repository": {
     "type": "git",
