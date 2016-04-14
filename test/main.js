@@ -11,7 +11,7 @@ import { decode as _decodeStructure } from '../lib/structure'
 import { decode as _decodePrimitive } from '../lib/primitive'
 
 test('exports all constants', t => {
-  t.same(constants, _constants)
+  t.deepEqual(constants, _constants)
 })
 
 test('exports decodeStructure function', t => {

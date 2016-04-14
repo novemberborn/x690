@@ -106,7 +106,7 @@ test('throws when decoding a BOOLEAN longer than 1 byte', t => {
 ].forEach(([title, type]) => {
   test(`decodes ${title}`, t => {
     const expected = new Buffer('foo')
-    t.same(decode(type, expected, 0, 3), expected)
+    t.deepEqual(decode(type, expected, 0, 3), expected)
   })
 })
 
@@ -127,13 +127,13 @@ test('throws when decoding an OCTET_STRING with a negative length', t => {
   test(`decodes ${title}`, t => {
     t.is(decode(type, new Buffer([42]), 0, 1), 42)
     const expected = new Buffer(7)
-    t.same(decode(type, expected, 0, 7), expected)
+    t.deepEqual(decode(type, expected, 0, 7), expected)
   })
 })
 
 test('decodes REAL', t => {
   const expected = new Buffer(7)
-  t.same(decode(REAL, expected, 0, 7), expected)
+  t.deepEqual(decode(REAL, expected, 0, 7), expected)
 })
 
 test('decodes OBJECT_IDENTIFIER', t => {
@@ -193,9 +193,9 @@ test('decodes UTF8_STRING values', t => {
 })
 
 test('decodes UTC_TIME', t => {
-  t.same(decode(UTC_TIME, new Buffer('010101000000Z'), 0, 13), new Date('2001-01-01T00:00:00Z'))
+  t.deepEqual(decode(UTC_TIME, new Buffer('010101000000Z'), 0, 13), new Date('2001-01-01T00:00:00Z'))
 })
 
 test('decodes GENERALIZED_TIME', t => {
-  t.same(decode(GENERALIZED_TIME, new Buffer('20160316182035Z'), 0, 15), new Date('2016-03-16T18:20:35Z'))
+  t.deepEqual(decode(GENERALIZED_TIME, new Buffer('20160316182035Z'), 0, 15), new Date('2016-03-16T18:20:35Z'))
 })
