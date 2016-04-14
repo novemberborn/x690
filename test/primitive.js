@@ -1,6 +1,6 @@
-import test from 'ava'
-
 import { AssertionError } from 'assert'
+
+import test from 'ava'
 
 import {
   BOOLEAN,
