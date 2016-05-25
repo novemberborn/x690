@@ -43,7 +43,7 @@
   "homepage": "https://github.com/novemberborn/x690#readme",
   "devDependencies": {
     "@novemberborn/as-i-preach": "^2.0.1",
-    "ava": "^0.14.0",
+    "ava": "^0.15.0",
     "babel-cli": "^6.6.5",
     "babel-plugin-transform-es2015-destructuring": "^6.6.5",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.7.4",
