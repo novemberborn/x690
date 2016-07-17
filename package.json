@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "description": "Low-level decoder for X.690 Distinguished Encoding Rules (DER)",
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "main": "dist/index.js",
   "scripts": {
