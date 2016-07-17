@@ -1,6 +1,6 @@
 import assert from 'assert'
 
-import { UTC_TIME } from '../constants'
+import { UTC_TIME } from './constants'
 
 function decodeUtcTime (str) {
   assert(/^\d{12}Z$/.test(str), 'UTC_TIME primitives must be formatted like yyMMddHHmmssZ')

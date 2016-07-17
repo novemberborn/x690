@@ -32,7 +32,7 @@ import {
   CHARACTER_STRING,
   BMP_STRING
 } from '../constants'
-import { decode } from '../lib/primitive'
+import { decode } from '../dist/primitive'
 
 test('throws when decoding an unknown type', t => {
   const err = t.throws(() => decode('foo', new Buffer(0), 0, 1), TypeError)

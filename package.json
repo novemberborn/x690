@@ -3,17 +3,13 @@
   "version": "0.1.0",
   "description": "Low-level decoder for X.690 Distinguished Encoding Rules (DER)",
   "files": [
-    "constants.js",
-    "constants.js.map",
-    "index.js",
-    "index.js.map",
-    "lib"
+    "dist"
   ],
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "clean": "rimraf constants.js constants.js.map index.js index.js.map lib",
+    "clean": "rimraf dist",
     "prebuild": "npm run clean",
-    "build": "babel src --out-dir ./ --source-maps",
+    "build": "babel src --out-dir dist --source-maps",
     "prepublish": "npm run build",
     "lint": "as-i-preach",
     "test": "ava",
@@ -53,8 +49,7 @@
   },
   "ava": {
     "source": [
-      "index.js",
-      "lib/**/*.js"
+      "dist"
     ]
   },
   "babel": {

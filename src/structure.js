@@ -34,7 +34,7 @@ import {
   UNIVERSAL_STRING,
   CHARACTER_STRING,
   BMP_STRING
-} from '../constants'
+} from './constants'
 
 const classLookup = {
   0b00: UNIVERSAL,

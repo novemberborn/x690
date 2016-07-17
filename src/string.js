@@ -13,7 +13,7 @@ import {
   UTF8_STRING,
   VIDEOTEX_STRING,
   VISIBLE_STRING
-} from '../constants'
+} from './constants'
 
 export function decode (type, buffer, start, length) {
   const end = start + length

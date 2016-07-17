@@ -16,7 +16,7 @@ import {
   VIDEOTEX_STRING,
   VISIBLE_STRING
 } from '../constants'
-import { decode } from '../lib/string'
+import { decode } from '../dist/string'
 
 const ascii = Array.from({ length: 128 }).map((_, codePoint) => codePoint)
 

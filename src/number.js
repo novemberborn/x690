@@ -1,4 +1,4 @@
-import { REAL } from '../constants'
+import { REAL } from './constants'
 
 export function decode (type, buffer, offset, length) {
   if (type === REAL || length > 6) {

@@ -1,4 +1,4 @@
-import { OBJECT_IDENTIFIER } from '../constants'
+import { OBJECT_IDENTIFIER } from './constants'
 
 export function decode (type, buffer, offset, length) {
   const components = []
