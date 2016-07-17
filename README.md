@@ -1,7 +1,7 @@
 # x690
 
 Low-level decoder for X.690 Distinguished Encoding Rules (DER). Tested with
-Node.js v5.9.1 and above.
+Node.js v6 and above.
 
 Wikipedia has a [decent explanation of
 DER](https://en.wikipedia.org/wiki/X.690#DER_encoding). See also the [full spec
