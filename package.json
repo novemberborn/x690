@@ -39,7 +39,7 @@
   },
   "homepage": "https://github.com/novemberborn/x690#readme",
   "devDependencies": {
-    "@novemberborn/as-i-preach": "^4.0.1",
+    "@novemberborn/as-i-preach": "^5.0.0",
     "ava": "^0.16.0",
     "babel-cli": "^6.6.5",
     "babel-plugin-istanbul": "^2.0.1",
