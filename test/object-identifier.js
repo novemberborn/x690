@@ -1,7 +1,7 @@
 import test from 'ava'
 
-import { OBJECT_IDENTIFIER, RELATIVE_OID } from '../constants'
-import { decode } from '../dist/object-identifier'
+import { OBJECT_IDENTIFIER, RELATIVE_OID } from '../src/constants'
+import { decode } from '../src/object-identifier'
 
 const absoluteOids = {
   '1.2': [0b00101010],

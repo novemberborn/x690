@@ -36,8 +36,8 @@ import {
   UNIVERSAL_STRING,
   CHARACTER_STRING,
   BMP_STRING
-} from '../constants'
-import { decode } from '../dist/structure'
+} from '../src/constants'
+import { decode } from '../src/structure'
 
 ;[
   [0b00000000, 'UNIVERSAL', UNIVERSAL],

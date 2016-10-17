@@ -1,7 +1,7 @@
 import test from 'ava'
 
-import { ENUMERATED, INTEGER, REAL } from '../constants'
-import { decode } from '../dist/number'
+import { ENUMERATED, INTEGER, REAL } from '../src/constants'
+import { decode } from '../src/number'
 
 test('returns a buffer for REAL values', t => {
   t.is(decode(REAL, new Buffer('abcdefghij'), 2, 6).toString(), 'cdefgh')

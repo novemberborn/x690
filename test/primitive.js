@@ -31,8 +31,8 @@ import {
   UNIVERSAL_STRING,
   CHARACTER_STRING,
   BMP_STRING
-} from '../constants'
-import { decode } from '../dist/primitive'
+} from '../src/constants'
+import { decode } from '../src/primitive'
 
 test('throws when decoding an unknown type', t => {
   const err = t.throws(() => decode('foo', new Buffer(0), 0, 1), TypeError)

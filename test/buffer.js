@@ -1,6 +1,6 @@
 import test from 'ava'
 
-import { decode } from '../dist/buffer'
+import { decode } from '../src/buffer'
 
 test('returns a buffer with the expected bytes', t => {
   const input = new Buffer('abcdefghij')

@@ -2,7 +2,7 @@ import { AssertionError } from 'assert'
 
 import test from 'ava'
 
-import { decode } from '../dist/boolean'
+import { decode } from '../src/boolean'
 
 test('0b0 decodes to false', t => {
   t.false(decode(new Buffer([0b0]), 0))

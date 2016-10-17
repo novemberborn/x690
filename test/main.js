@@ -4,11 +4,11 @@ import {
   constants,
   decodeStructure,
   decodePrimitive
-} from '../'
+} from '../src/'
 
-import * as _constants from '../constants'
-import { decode as _decodeStructure } from '../dist/structure'
-import { decode as _decodePrimitive } from '../dist/primitive'
+import * as _constants from '../src/constants'
+import { decode as _decodeStructure } from '../src/structure'
+import { decode as _decodePrimitive } from '../src/primitive'
 
 test('exports all constants', t => {
   t.deepEqual(constants, _constants)

@@ -50,8 +50,9 @@
     "rimraf": "^2.5.2"
   },
   "ava": {
+    "require": "babel-core/register",
     "source": [
-      "dist/**/*.js"
+      "src/**/*.js"
     ]
   },
   "babel": {

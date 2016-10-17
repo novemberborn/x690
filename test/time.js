@@ -2,8 +2,8 @@ import { AssertionError } from 'assert'
 
 import test from 'ava'
 
-import { GENERALIZED_TIME, UTC_TIME } from '../constants'
-import { decode } from '../dist/time'
+import { GENERALIZED_TIME, UTC_TIME } from '../src/constants'
+import { decode } from '../src/time'
 
 test('returns a Date instance', t => {
   t.truthy(decode(UTC_TIME, new Buffer('991231235959Z'), 0, 13) instanceof Date)
