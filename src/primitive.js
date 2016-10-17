@@ -25,7 +25,7 @@ import {
   UTF8_STRING,
   VIDEOTEX_STRING,
   VISIBLE_STRING
-} from '../constants'
+} from './constants'
 
 import { decode as decodeBoolean } from './boolean'
 import { decode as decodeBuffer } from './buffer'
