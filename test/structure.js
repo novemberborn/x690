@@ -39,7 +39,7 @@ import {
 } from '../constants'
 import { decode } from '../dist/structure'
 
-;[
+[
   [0b00000000, 'UNIVERSAL', UNIVERSAL],
   [0b01000000, 'APPLICATION', APPLICATION],
   [0b10000000, 'CONTEXT_SPECIFIC', CONTEXT_SPECIFIC],
