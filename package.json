@@ -42,7 +42,7 @@
     "@novemberborn/as-i-preach": "^6.0.0",
     "ava": "^0.16.0",
     "babel-cli": "^6.6.5",
-    "babel-plugin-istanbul": "^2.0.1",
+    "babel-plugin-istanbul": "^3.0.0",
     "babel-plugin-transform-es2015-destructuring": "^6.6.5",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.7.4",
     "babel-plugin-transform-strict-mode": "^6.6.5",
