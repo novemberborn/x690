@@ -33,7 +33,7 @@ test('decodes GENERALIZED_TIME with 3 fractional seconds', t => {
   t.deepEqual(decode(GENERALIZED_TIME, new Buffer('20160316182035.123Z'), 0, 19), new Date('2016-03-16T18:20:35.123Z'))
 })
 
-test('throws if the value is invalid', async t => {
+test('throws if the value is invalid', t => {
   let err = t.throws(() => decode(UTC_TIME, new Buffer('991231235959!'), 0, 13), AssertionError)
   t.is(err.message, 'UTC_TIME primitives must be formatted like yyMMddHHmmssZ')
 
