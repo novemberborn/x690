@@ -12,7 +12,7 @@ function decodeUtcTime (str) {
 }
 
 function decodeGeneralizedTime (str) {
-  assert(/^\d{14}(\.\d{1,3})?Z$/.test(str), 'GENERALIZED_TIME primitives must be formatted like yyyyMMddHHmmssZ, yyyyMMddHHmmss.fZ, yyyyMMddHHmmss.ffZ or yyyyMMddHHmmss.fffZ')
+  assert(/^\d{14}(\.\d{1,3})?Z$/.test(str), 'GENERALIZED_TIME primitives must be formatted like yyyyMMddHHmmssZ, yyyyMMddHHmmss.fZ, yyyyMMddHHmmss.ffZ or yyyyMMddHHmmss.fffZ') // eslint-disable-line max-len
   const isoString = str.replace(/^(\d{4})(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})(\.\d{1,3})?Z/, '$1-$2-$3T$4:$5:$6$7Z')
   return new Date(isoString)
 }
