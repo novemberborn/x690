@@ -12,7 +12,7 @@ const absoluteOids = {
 for (const oid in absoluteOids) {
   const octets = absoluteOids[oid]
   test(`correctly decodes ${oid}`, t => {
-    t.is(decode(OBJECT_IDENTIFIER, new Buffer(octets), 0, octets.length), oid)
+    t.is(decode(OBJECT_IDENTIFIER, Buffer.from(octets), 0, octets.length), oid)
   })
 }
 
@@ -26,6 +26,6 @@ const relativeOids = {
 for (const oid in relativeOids) {
   const octets = relativeOids[oid]
   test(`correctly decodes relative ${oid}`, t => {
-    t.is(decode(RELATIVE_OID, new Buffer(octets), 0, octets.length), oid)
+    t.is(decode(RELATIVE_OID, Buffer.from(octets), 0, octets.length), oid)
   })
 }

@@ -46,7 +46,7 @@ import { decode } from '../dist/structure'
   [0b11000000, 'PRIVATE', PRIVATE]
 ].forEach(([tag, title, symbol]) => {
   test(`decodes ${title} class`, t => {
-    t.is(decode(new Buffer([tag, 0b0]), 0).tagClass, symbol)
+    t.is(decode(Buffer.from([tag, 0b0]), 0).tagClass, symbol)
   })
 })
 
@@ -81,15 +81,15 @@ import { decode } from '../dist/structure'
   [0b11110, 'BMP_STRING', BMP_STRING]
 ].forEach(([tag, title, symbol]) => {
   test(`decodes ${title} type`, t => {
-    t.is(decode(new Buffer([tag, 0b0]), 0).type, symbol)
+    t.is(decode(Buffer.from([tag, 0b0]), 0).type, symbol)
   })
 })
 
 test('does not decode reserved or unused UNIVERSAL types', t => {
-  t.is(decode(new Buffer([0b00000000, 0b0]), 0).type, null)
-  t.is(decode(new Buffer([0b00001110, 0b0]), 0).type, null)
-  t.is(decode(new Buffer([0b00001111, 0b0]), 0).type, null)
-  t.is(decode(new Buffer([0b00011111, 0b0]), 0).type, null)
+  t.is(decode(Buffer.from([0b00000000, 0b0]), 0).type, null)
+  t.is(decode(Buffer.from([0b00001110, 0b0]), 0).type, null)
+  t.is(decode(Buffer.from([0b00001111, 0b0]), 0).type, null)
+  t.is(decode(Buffer.from([0b00011111, 0b0]), 0).type, null)
 })
 
 ;[
@@ -98,7 +98,7 @@ test('does not decode reserved or unused UNIVERSAL types', t => {
   [0b11000000, 'PRIVATE', PRIVATE]
 ].forEach(([tag, title, symbol]) => {
   test(`does not decode type for ${title} class`, t => {
-    t.is(decode(new Buffer([tag, 0b0]), 0).type, null)
+    t.is(decode(Buffer.from([tag, 0b0]), 0).type, null)
   })
 })
 
@@ -109,7 +109,7 @@ test('does not decode reserved or unused UNIVERSAL types', t => {
   [0b11010111, 'PRIVATE', PRIVATE]
 ].forEach(([tag, title, symbol]) => {
   test(`returns short form tag number for ${title} class`, t => {
-    t.is(decode(new Buffer([tag, 0b0]), 0).tagNumber, 23)
+    t.is(decode(Buffer.from([tag, 0b0]), 0).tagNumber, 23)
   })
 })
 
@@ -119,21 +119,21 @@ test('does not decode reserved or unused UNIVERSAL types', t => {
   [[0b11011111, 0b10000001, 0b00000001], 'PRIVATE', PRIVATE]
 ].forEach(([tag, title, symbol]) => {
   test(`returns long form tag number for ${title} class`, t => {
-    t.is(decode(new Buffer([...tag, 0b0]), 0).tagNumber, 129)
+    t.is(decode(Buffer.from([...tag, 0b0]), 0).tagNumber, 129)
   })
 })
 
 test('decodes the primitive field', t => {
-  t.true(decode(new Buffer([0b00000001, 0b0]), 0).primitive)
-  t.false(decode(new Buffer([0b00100001, 0b0]), 0).primitive)
+  t.true(decode(Buffer.from([0b00000001, 0b0]), 0).primitive)
+  t.false(decode(Buffer.from([0b00100001, 0b0]), 0).primitive)
 })
 
 test('decodes a short form length', t => {
-  t.is(decode(new Buffer([0b0, 0b1]), 0).length, 1)
+  t.is(decode(Buffer.from([0b0, 0b1]), 0).length, 1)
 })
 
 test('decodes a long form length', t => {
-  t.is(decode(new Buffer([0b0, 0b10000011, 0b1, 0b1, 0b1]), 0).length, 65793)
+  t.is(decode(Buffer.from([0b0, 0b10000011, 0b1, 0b1, 0b1]), 0).length, 65793)
 })
 
 test('throws when decoding a non-Buffer', t => {
@@ -142,23 +142,23 @@ test('throws when decoding a non-Buffer', t => {
 })
 
 test('throws when decoding with a non-number offset', t => {
-  const err = t.throws(() => decode(new Buffer(0), false), AssertionError)
+  const err = t.throws(() => decode(Buffer.alloc(0), false), AssertionError)
   t.is(err.message, 'Parameter `offset` must be >= 0')
 })
 
 test('throws when decoding with a negative offset', t => {
-  const err = t.throws(() => decode(new Buffer(0), -1), AssertionError)
+  const err = t.throws(() => decode(Buffer.alloc(0), -1), AssertionError)
   t.is(err.message, 'Parameter `offset` must be >= 0')
 })
 
 test('returns the offset where the value starts', t => {
-  t.is(decode(new Buffer([0b0, 0b1]), 0).start, 2)
+  t.is(decode(Buffer.from([0b0, 0b1]), 0).start, 2)
 })
 
 test('returns the offset where the value ends', t => {
-  t.is(decode(new Buffer([0b0, 0b11]), 0).end, 5)
+  t.is(decode(Buffer.from([0b0, 0b11]), 0).end, 5)
 })
 
 test('starts decoding from the offset', t => {
-  t.is(decode(new Buffer([0b1, 0b0, 0b10, 0b0]), 2).type, INTEGER)
+  t.is(decode(Buffer.from([0b1, 0b0, 0b10, 0b0]), 2).type, INTEGER)
 })
